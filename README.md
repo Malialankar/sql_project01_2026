@@ -44,7 +44,7 @@ quantity: Number of units per package (mixed with grams for loose produce)
 # 🔧 Project Workflow
 Here’s a step-by-step breakdown of what we do in this project:
 
-1. Database & Table Creation
+# 1. Database & Table Creation
 
 We start by creating a SQL table with appropriate data types:
 
@@ -61,7 +61,7 @@ CREATE TABLE zepto (
   quantity INTEGER
 );
 
-2. Data Import
+# 2. Data Import
 Loaded CSV using pgAdmin's import feature.
 
 If you're not able to use the import feature, write this code instead:
@@ -69,7 +69,7 @@ If you're not able to use the import feature, write this code instead:
   zepto(category,name,mrp,discountPercent,availableQuantity,discountedSellingPrice,weightInGms,outOfStock,quantity)
   FROM 'data/zepto_v2.csv' WITH (FORMAT csv, HEADER true, DELIMITER ',', QUOTE '"', ENCODING 'UTF8');
   
-3. 🔍 Data Exploration
+# 3. 🔍 Data Exploration
 
 Counted the total number of records in the dataset
 
@@ -84,13 +84,12 @@ Compared in-stock vs out-of-stock product counts
 Detected products present multiple times, representing different SKUs
 
 
-4. 🧹 Data Cleaning
+# 4. 🧹 Data Cleaning
 Identified and removed rows where MRP or discounted selling price was zero
 Converted mrp and discountedSellingPrice from paise to rupees for consistency and readability
 
 
-5. 📊 Business Insights
-6. 
+# 5. 📊 Business Insights
 - Found top 10 best-value products based on discount percentage
 
 - Identified high-MRP products that are currently out of stock
@@ -108,3 +107,6 @@ Converted mrp and discountedSellingPrice from paise to rupees for consistency an
 - Measured total inventory weight per product category
 
 
+# Author
+
+Alankar Mali
